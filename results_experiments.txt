@@ -1,0 +1,134 @@
+Downloading VIX...
+
+==========================================================================================
+EXPERIMENT: SPY 1d
+==========================================================================================
+  3829 training rows, 1254 test rows, 20 features, up-share (train) 0.554
+  Logistic Reg   best {'logisticregression__C': 0.01}  CV AUC 0.500
+  Random Forest  best {'max_depth': 5, 'min_samples_leaf': 100}  CV AUC 0.497
+  SVM            best {'svc__C': 0.1, 'svc__gamma': 'scale'}  CV AUC 0.506
+
+               Accuracy  BalAcc    AUC  p_value  Exposure   CAGR    Vol  Sharpe  MaxDD
+Model                                                                                 
+Always Up         0.547   0.500  0.500    1.000     1.000  0.147  0.171   0.888 -0.245
+Logistic Reg      0.548   0.502  0.502    0.461     0.983  0.144  0.169   0.881 -0.260
+Random Forest     0.543   0.500  0.512    0.246     0.961  0.136  0.169   0.840 -0.253
+SVM               0.547   0.500  0.512    0.248     1.000  0.147  0.171   0.888 -0.245
+Buy & Hold          NaN     NaN    NaN      NaN     1.000  0.147  0.171   0.888 -0.245
+
+==========================================================================================
+EXPERIMENT: SPY 5d
+==========================================================================================
+  3829 training rows, 1250 test rows, 20 features, up-share (train) 0.600
+  Logistic Reg   best {'logisticregression__C': 1.0}  CV AUC 0.510
+  Random Forest  best {'max_depth': 8, 'min_samples_leaf': 20}  CV AUC 0.496
+  SVM            best {'svc__C': 10.0, 'svc__gamma': 'scale'}  CV AUC 0.526
+
+               Accuracy  BalAcc    AUC  p_value  Exposure   CAGR    Vol  Sharpe  MaxDD
+Model                                                                                 
+Always Up         0.607   0.500  0.500    1.000     1.000  0.150  0.167   0.923 -0.235
+Logistic Reg      0.597   0.495  0.510    0.289     0.972  0.141  0.165   0.883 -0.252
+Random Forest     0.603   0.504  0.523    0.089     0.966  0.138  0.166   0.866 -0.271
+SVM               0.599   0.532  0.557    0.001     0.819  0.171  0.143   1.177 -0.165
+Buy & Hold          NaN     NaN    NaN      NaN     1.000  0.151  0.167   0.924 -0.235
+
+==========================================================================================
+EXPERIMENT: ^NSEI 1d
+==========================================================================================
+  Volume data unreliable for this ticker -> volume feature dropped
+  3052 training rows, 1235 test rows, 19 features, up-share (train) 0.529
+  Logistic Reg   best {'logisticregression__C': 1.0}  CV AUC 0.517
+  Random Forest  best {'max_depth': 5, 'min_samples_leaf': 20}  CV AUC 0.544
+  SVM            best {'svc__C': 0.1, 'svc__gamma': 'scale'}  CV AUC 0.531
+
+               Accuracy  BalAcc    AUC  p_value  Exposure   CAGR    Vol  Sharpe  MaxDD
+Model                                                                                 
+Always Up         0.536   0.500  0.500    1.000     1.000  0.135  0.140   0.978 -0.172
+Logistic Reg      0.526   0.495  0.525    0.079     0.930  0.072  0.133   0.590 -0.281
+Random Forest     0.538   0.520  0.553    0.002     0.751  0.078  0.117   0.697 -0.132
+SVM               0.533   0.498  0.542    0.011     0.981  0.129  0.138   0.952 -0.172
+Buy & Hold          NaN     NaN    NaN      NaN     1.000  0.135  0.140   0.979 -0.172
+
+==========================================================================================
+EXPERIMENT: ^NSEI 5d
+==========================================================================================
+  Volume data unreliable for this ticker -> volume feature dropped
+  3052 training rows, 1231 test rows, 19 features, up-share (train) 0.566
+  Logistic Reg   best {'logisticregression__C': 1.0}  CV AUC 0.518
+  Random Forest  best {'max_depth': 8, 'min_samples_leaf': 20}  CV AUC 0.538
+  SVM            best {'svc__C': 10.0, 'svc__gamma': 'scale'}  CV AUC 0.533
+
+               Accuracy  BalAcc    AUC  p_value  Exposure   CAGR    Vol  Sharpe  MaxDD
+Model                                                                                 
+Always Up         0.576   0.500  0.500    1.000     1.000  0.135  0.138   0.987 -0.169
+Logistic Reg      0.566   0.493  0.466    0.976     0.981  0.112  0.132   0.871 -0.152
+Random Forest     0.550   0.493  0.481    0.863     0.872  0.086  0.127   0.712 -0.213
+SVM               0.570   0.535  0.549    0.004     0.736  0.082  0.119   0.717 -0.235
+Buy & Hold          NaN     NaN    NaN      NaN     1.000  0.135  0.138   0.988 -0.169
+
+==========================================================================================
+EXPERIMENT: AAPL 1d
+==========================================================================================
+  3829 training rows, 1254 test rows, 20 features, up-share (train) 0.528
+  Logistic Reg   best {'logisticregression__C': 0.01}  CV AUC 0.520
+  Random Forest  best {'max_depth': 8, 'min_samples_leaf': 20}  CV AUC 0.536
+  SVM            best {'svc__C': 10.0, 'svc__gamma': 'scale'}  CV AUC 0.540
+
+               Accuracy  BalAcc    AUC  p_value  Exposure   CAGR    Vol  Sharpe  MaxDD
+Model                                                                                 
+Always Up         0.530   0.500  0.500    1.000     1.000  0.167  0.279   0.693 -0.334
+Logistic Reg      0.516   0.492  0.458    0.996     0.893  0.170  0.256   0.740 -0.297
+Random Forest     0.515   0.499  0.488    0.753     0.762  0.189  0.245   0.827 -0.306
+SVM               0.501   0.493  0.496    0.624     0.632  0.075  0.219   0.438 -0.353
+Buy & Hold          NaN     NaN    NaN      NaN     1.000  0.167  0.279   0.693 -0.334
+
+==========================================================================================
+COMBINED SUMMARY (test period 2021 onward)
+==========================================================================================
+Experiment         Model   AUC  p_value  BalAcc  Sharpe  BH_Sharpe  MaxDD  Exposure
+    SPY 1d     Always Up 0.500    1.000   0.500   0.888      0.888 -0.245     1.000
+    SPY 1d  Logistic Reg 0.502    0.461   0.502   0.881      0.888 -0.260     0.983
+    SPY 1d Random Forest 0.512    0.246   0.500   0.840      0.888 -0.253     0.961
+    SPY 1d           SVM 0.512    0.248   0.500   0.888      0.888 -0.245     1.000
+    SPY 1d    Buy & Hold   NaN      NaN     NaN   0.888      0.888 -0.245     1.000
+    SPY 5d     Always Up 0.500    1.000   0.500   0.923      0.924 -0.235     1.000
+    SPY 5d  Logistic Reg 0.510    0.289   0.495   0.883      0.924 -0.252     0.972
+    SPY 5d Random Forest 0.523    0.089   0.504   0.866      0.924 -0.271     0.966
+    SPY 5d           SVM 0.557    0.001   0.532   1.177      0.924 -0.165     0.819
+    SPY 5d    Buy & Hold   NaN      NaN     NaN   0.924      0.924 -0.235     1.000
+  ^NSEI 1d     Always Up 0.500    1.000   0.500   0.978      0.979 -0.172     1.000
+  ^NSEI 1d  Logistic Reg 0.525    0.079   0.495   0.590      0.979 -0.281     0.930
+  ^NSEI 1d Random Forest 0.553    0.002   0.520   0.697      0.979 -0.132     0.751
+  ^NSEI 1d           SVM 0.542    0.011   0.498   0.952      0.979 -0.172     0.981
+  ^NSEI 1d    Buy & Hold   NaN      NaN     NaN   0.979      0.979 -0.172     1.000
+  ^NSEI 5d     Always Up 0.500    1.000   0.500   0.987      0.988 -0.169     1.000
+  ^NSEI 5d  Logistic Reg 0.466    0.976   0.493   0.871      0.988 -0.152     0.981
+  ^NSEI 5d Random Forest 0.481    0.863   0.493   0.712      0.988 -0.213     0.872
+  ^NSEI 5d           SVM 0.549    0.004   0.535   0.717      0.988 -0.235     0.736
+  ^NSEI 5d    Buy & Hold   NaN      NaN     NaN   0.988      0.988 -0.169     1.000
+   AAPL 1d     Always Up 0.500    1.000   0.500   0.693      0.693 -0.334     1.000
+   AAPL 1d  Logistic Reg 0.458    0.996   0.492   0.740      0.693 -0.297     0.893
+   AAPL 1d Random Forest 0.488    0.753   0.499   0.827      0.693 -0.306     0.762
+   AAPL 1d           SVM 0.496    0.624   0.493   0.438      0.693 -0.353     0.632
+   AAPL 1d    Buy & Hold   NaN      NaN     NaN   0.693      0.693 -0.334     1.000
+
+Top 10 Random Forest features (SPY 1d):
+macd_hist      0.070
+vix_vs_ma21    0.067
+ret_1d         0.063
+volume_z       0.062
+ret_10d        0.059
+hl_range       0.055
+ret_5d         0.055
+vol_10d        0.054
+ret_2d         0.053
+px_vs_sma50    0.051
+
+==========================================================================================
+VERDICT
+==========================================================================================
+Statistically significant AUC (p < 0.05): SPY 5d / SVM, ^NSEI 1d / Random Forest, ^NSEI 1d / SVM, ^NSEI 5d / SVM
+Models with higher Sharpe than Buy & Hold: SPY 5d / SVM, AAPL 1d / Logistic Reg, AAPL 1d / Random Forest
+(Tests run: 15. At p < 0.05, about 1 in 20 will look significant by pure chance.)
+
+DONE. Saved summary.csv, equity_curves_all.png, feature_importance.png

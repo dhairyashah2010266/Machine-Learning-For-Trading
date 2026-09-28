@@ -1,0 +1,78 @@
+Downloading VIX...
+
+==========================================================================================
+ROBUSTNESS CHECK: SPY 5d / SVM
+==========================================================================================
+
+[1] Stricter significance test (2021 onward, params {'svc__C': 10.0, 'svc__gamma': 'scale'})
+    AUC 0.557   block-permutation p-value 0.003   -> PASS
+
+[2] Beats Buy & Hold across rebalancing start days (100% of them) -> PASS
+ start_offset  Sharpe  BH_Sharpe
+            0   1.177      0.924
+            1   1.026      0.943
+            2   1.346      0.978
+            3   1.064      0.929
+            4   1.096      0.888
+
+[3] Year by year (AUC above 0.5 in 5 of 5 years) -> PASS
+ Year   AUC  Strategy_ret  BH_ret
+ 2021 0.574         0.297   0.286
+ 2022 0.590         0.014  -0.176
+ 2023 0.507         0.235   0.250
+ 2024 0.537         0.172   0.267
+ 2025 0.530         0.150   0.195
+
+[4] Fresh period 2016-2020 (params {'svc__C': 10.0, 'svc__gamma': 'scale'})
+    AUC 0.554   p-value 0.010   Sharpe 1.046 vs Buy & Hold 0.920   -> PASS
+
+[5] All settings tried (AUC above 0.52 for 100% of them) -> PASS
+ svc__C svc__gamma   AUC
+    0.1      scale 0.560
+    0.1       0.01 0.529
+    1.0      scale 0.561
+    1.0       0.01 0.529
+   10.0      scale 0.557
+   10.0       0.01 0.541
+
+==========================================================================================
+ROBUSTNESS CHECK: ^NSEI 1d / Random Forest
+==========================================================================================
+
+[1] Stricter significance test (2021 onward, params {'max_depth': 5, 'min_samples_leaf': 20})
+    AUC 0.553   block-permutation p-value 0.002   -> PASS
+
+[2] Beats Buy & Hold across rebalancing start days (0% of them) -> FAIL
+ start_offset  Sharpe  BH_Sharpe
+            0   0.697      0.979
+
+[3] Year by year (AUC above 0.5 in 4 of 5 years) -> PASS
+ Year   AUC  Strategy_ret  BH_ret
+ 2021 0.536         0.108   0.257
+ 2022 0.595         0.115   0.032
+ 2023 0.604         0.115   0.195
+ 2024 0.461        -0.016   0.092
+ 2025 0.576         0.065   0.101
+
+[4] Fresh period 2016-2020 (params {'max_depth': 8, 'min_samples_leaf': 100})
+    AUC 0.528   p-value 0.056   Sharpe 0.460 vs Buy & Hold 0.754   -> FAIL
+
+[5] All settings tried (AUC above 0.52 for 100% of them) -> PASS
+ max_depth  min_samples_leaf   AUC
+         3                20 0.550
+         3                50 0.546
+         3               100 0.544
+         5                20 0.553
+         5                50 0.551
+         5               100 0.545
+         8                20 0.547
+         8                50 0.544
+         8               100 0.541
+
+==========================================================================================
+FINAL ROBUSTNESS VERDICT
+==========================================================================================
+SPY 5d / SVM                 passed 5/5 tests  ->  LIKELY REAL
+^NSEI 1d / Random Forest     passed 3/5 tests  ->  MIXED
+
+DONE
